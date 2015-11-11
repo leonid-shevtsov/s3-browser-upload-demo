@@ -24,10 +24,6 @@ window.initS3FileUpload = function($fileInput) {
 
 // This function retrieves s3 parameters from our server API and appends them
 // to the upload form.
-// Communication with our server is done synchrounously.
-// Typically this request is really fast, but if responsiveness is an issue
-// you can retrieve the form parameters in advance, but then the filename must be
-// known in advance and policy lifetime should be extended
 function s3add(e, data) {
   var filename = data.files[0].name;
   var params = [];
