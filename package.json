@@ -1,0 +1,23 @@
+{
+  "name": "s3-upload-demo",
+  "version": "1.0.0",
+  "description": "Demonstration of direct upload to S3",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/leonid-shevtsov/s3-upload-demo.git"
+  },
+  "author": "Leonid Shevtsov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leonid-shevtsov/s3-upload-demo/issues"
+  },
+  "homepage": "https://github.com/leonid-shevtsov/s3-upload-demo#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
