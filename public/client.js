@@ -33,7 +33,7 @@ function s3add(e, data) {
       filename: filename
     },
     success: function(s3Data) {
-      data.url = response.endpoint_url;
+      data.url = s3Data.endpoint_url;
       data.formData = s3Data.params;
       data.submit();
     }
