@@ -1,6 +1,5 @@
 // Requires jQuery and blueimp's jQuery.fileUpload
 
-var bucket = 'browser-upload-demo';
 // client-side validation by fileUpload should match the policy
 // restrictions so that the checks fail early
 var acceptFileType = /.*/i;
@@ -14,7 +13,6 @@ window.initS3FileUpload = function($fileInput) {
   $fileInput.fileupload({
     // acceptFileTypes: acceptFileType,
     // maxFileSize: maxFileSize,
-    url: 'https://' + bucket + '.s3.amazonaws.com',
     paramName: 'file',
     add: s3add,
     dataType: 'xml',
@@ -35,6 +33,7 @@ function s3add(e, data) {
       filename: filename
     },
     success: function(s3Data) {
+      data.url = s3Data.endpoint_url;
       data.formData = s3Data.params;
       data.submit();
     }
