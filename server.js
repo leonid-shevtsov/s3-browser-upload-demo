@@ -22,7 +22,7 @@ app.get('/s3_credentials', function(request, response) {
     var filename =
       crypto.randomBytes(16).toString('hex') +
       path.extname(request.query.filename);
-    response.json(s3.s3Credentials(s3Config, filename));
+    response.json(s3.s3Credentials(s3Config, {filename: filename, contentType: request.query.content_type}));
   } else {
     response.status(400).send('filename is required');
   }

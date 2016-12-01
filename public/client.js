@@ -24,13 +24,15 @@ window.initS3FileUpload = function($fileInput) {
 // to the upload form.
 function s3add(e, data) {
   var filename = data.files[0].name;
+  var contentType = data.files[0].type;
   var params = [];
   $.ajax({
     url: credentialsUrl,
     type: 'GET',
     dataType: 'json',
     data: {
-      filename: filename
+      filename: filename,
+      content_type: contentType
     },
     success: function(s3Data) {
       data.url = s3Data.endpoint_url;
